@@ -29,48 +29,61 @@
     <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container">
             <div class="navbar-translate">
-                <a class="navbar-brand" href="#pablo">
-                   Navbar
-               </a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-       	        <span class="navbar-toggler-bar bar1"></span>
-    	        <span class="navbar-toggler-bar bar2"></span>
-    	        <span class="navbar-toggler-bar bar3"></span>
-     	    </button>
+              <%= link_to "Pocket Karte", root_path, class:"navbar-brand" %>
 
-
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+         	      <span class="navbar-toggler-bar bar1"></span>
+      	        <span class="navbar-toggler-bar bar2"></span>
+      	        <span class="navbar-toggler-bar bar3"></span>
+       	    </button>
             </div>
 
             <div class="collapse navbar-collapse justify-content-end" id="navigation">
         	    <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#pablo">
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#pablo">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#pablo">Disabled</a>
-                    </li>
-                </ul>
+
+                <li class="nav-item">
+                  <%= link_to "Background", backgrounds_path, class:"nav-link" %>
+
+                </li>
+
+                <li class="nav-item">
+                  <%= link_to "Present illness", root_path, class:"nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "Patients", root_path, class:"nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "Language", root_path, class:"nav-link" %>
+                </li>
+
+                <li class="nav-item">
+                  <% if user_signed_in? %>
+                    <%= link_to "Account setting", edit_user_registration_path, class:"nav-link" %>
+                  <% else %>
+                    <%= link_to "Sign up", new_user_registration_path, class:"nav-link" %>
+                  <% end %>
+                </li>
+                <li class="nav-item">
+                  <% if user_signed_in? %>
+                    <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"nav-link" %>
+                  <% else %>
+                    <%= link_to "Log in", new_user_session_path, class:"nav-link" %>
+                  <% end %>
+                </li>
+                <li class="nav-item active">
+                    <%= link_to "HOME", root_path, class:"nav-link" %>
+                </li>
+              </ul>
             </div>
         </div>
     </nav>
 
-
-
-
-
-
   </head>
+
 
   <body>
 
     <header>
-
-
     </header>
 
 
@@ -83,7 +96,6 @@
       <p>運営会社DIVE INTO CODE株式会社</p>
       <p>© 2017-2018 Copyright DIVE INTO CODE Corp.</p>
     </footer>
-
 
   </body>
 </html>

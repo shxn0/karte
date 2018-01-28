@@ -1,75 +1,90 @@
-<div class="container">
-  <%= form_for(@background) do |f| %>
-    <div class="wrapper-bg-form col-md-6 col-md-offset-3">
-    <div class="blockquote ">
+<div class="container-main col-sm-12 col-md-12 col-lg-12">
+  <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
+  <div class="wrapper-bg-form col-md-6 col-md-offset-3">
+    <%= form_for(@background) do |f| %>
 
-      <div class= "form-group" >
-        <%= f.label :Name %>
-
-        <div class="items_arrange">
-          <%= f.text_field :name, class:"form-control", placeholder:"Name" %>
-        </div>
+    <% if @background.errors.any? %>
+      <div id= "error_explanation">
+        <h2 class= "text-danger"><%= @background.errors.count %> errors have been detected</h2>
+        <ul>
+          <% @background.errors.full_messages.each do |msg| %>
+            <li class= "text-danger"><%= msg %></li>
+          <% end %>
+        </ul>
       </div>
+    <% end %>
 
-      <div class= "form-group" >
-        <%= f.label :Age %>
-        <div class="items_arrange">
-          <%= f.text_field :age, class:"form-control", placeholder:"Age" %>
-        </div>
-      </div>
+    <span class="badge badge-primary">Your background info</span>
+      <div class="blockquote ">
 
-      <div class= "form-group" >
-        <%= f.label :Sex %>
-        <div class="items_arrange">
-        <%= f.text_field :sex, class:"form-control", placeholder:"Sex" %>
-        </div>
-      </div>
-
-      <div class= "form-group" >
-        <%= f.label :Country %>
-        <div class="items_arrange">
-          <%= f.text_field :country, class:"form-control", placeholder:"Country" %>
-        </div>
-      </div>
-
-      <div class= "form-group" >
-        <%= f.label :Occupation %>
-        <div class="items_arrange">
-          <%= f.text_field :occupation, class:"form-control", placeholder:"Occupation" %>
-        </div>
-      </div>
-
-      <div class= "form-group" >
-        <%= f.label :Religion %>
-        <div class="items_arrange">
-          <%= f.text_field :religion, class:"form-control", placeholder:"Religion" %>
-        </div>
-      </div>
-
-      <div class= "form-group" >
-        <%= f.label :Living_will %>
-        <div class="items_arrange">
-          <%= f.text_field :living_will, class:"form-control", placeholder:"Living_will" %>
-        </div>
-      </div>
-
-      <div class= "form-group" >
-        <%= f.label :Notes %>
+        <div class= "form-group" >
+          <%= f.label :Name %>
           <div class="items_arrange">
-            <%= f.text_field :notes, class:"form-control", placeholder:"Notes" %>
+            <%= f.text_field :name, class:"form-control", placeholder:"Name" %>
           </div>
-      </div>
-
-    </div>
-
-        <div class="wrapper-bg-form-submit col-md-4 col-md-offset-4">
-          <%= f.submit 'Save', class: 'btn btn-primary' %>
         </div>
 
-    </div>
+        <div class= "form-group" >
+          <%= f.label :Age %>
+          <div class="items_arrange">
+            <%= f.text_field :age, class:"form-control", placeholder:"Age" %>
+          </div>
+        </div>
 
-  <% end %>
+        <div class= "form-group" >
+          <%= f.label :Sex %>
+          <div class="items_arrange">
+          <%= f.text_field :sex, class:"form-control", placeholder:"Sex" %>
+          </div>
+        </div>
+
+        <div class= "form-group" >
+          <%= f.label :Country %>
+          <div class="items_arrange">
+            <%= f.text_field :country, class:"form-control", placeholder:"Country" %>
+          </div>
+        </div>
+
+        <div class= "form-group" >
+          <%= f.label :Occupation %>
+          <div class="items_arrange">
+            <%= f.text_field :occupation, class:"form-control", placeholder:"Occupation" %>
+          </div>
+        </div>
+
+        <div class= "form-group" >
+          <%= f.label :Religion %>
+          <div class="items_arrange">
+            <%= f.text_field :religion, class:"form-control", placeholder:"Religion" %>
+          </div>
+        </div>
+
+        <div class= "form-group" >
+          <%= f.label :Living_will %>
+          <div class="items_arrange">
+            <%= f.text_field :living_will, class:"form-control", placeholder:"Living_will" %>
+          </div>
+        </div>
+
+        <div class= "form-group" >
+          <%= f.label :Notes %>
+            <div class="items_arrange">
+              <%= f.text_area :notes, class:"form-control", placeholder:"Notes" %>
+            </div>
+        </div>
+
+      </div>
+
+      <div class="wrapper-bg-form-submit">
+        <%= f.submit 'Register', class: 'btn btn-primary' %>
+      </div>
+
+
+  </div>
 
 
 
+    <% end %>
+
+  </div>
 </div>
