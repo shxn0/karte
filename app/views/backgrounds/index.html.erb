@@ -31,54 +31,54 @@
               <h4>Please register you background info </h4>
             <% else %>
 
-            <div class= "form-group" >
-              <strong> Name </strong>
-              <div class="items_arrange">
-                <%= @background.name %>
+              <div class= "form-group" >
+                <strong> Name </strong>
+                <div class="items_arrange">
+                  <%= @background.name %>
+                </div>
               </div>
-            </div>
-            <div class= "form-group" >
-              <strong> Age </strong>
-              <div class="items_arrange">
-                <%= @background.age %>
+              <div class= "form-group" >
+                <strong> Age </strong>
+                <div class="items_arrange">
+                  <%= @background.age %>
+                </div>
               </div>
-            </div>
-            <div class= "form-group" >
-              <strong> Sex </strong>
-              <div class="items_arrange">
-                <%= @background.sex %>
+              <div class= "form-group" >
+                <strong> Sex </strong>
+                <div class="items_arrange">
+                  <%= @background.sex %>
+                </div>
               </div>
-            </div>
-            <div class= "form-group" >
-              <strong> Country </strong>
-              <div class="items_arrange">
-                <%= @background.country %>
+              <div class= "form-group" >
+                <strong> Country </strong>
+                <div class="items_arrange">
+                  <%= @background.country %>
+                </div>
               </div>
-            </div>
-            <div class= "form-group" >
-              <strong> Occupation </strong>
-              <div class="items_arrange">
-                <%= @background.occupation %>
+              <div class= "form-group" >
+                <strong> Occupation </strong>
+                <div class="items_arrange">
+                  <%= @background.occupation %>
+                </div>
               </div>
-            </div>
-            <div class= "form-group" >
-              <strong> Religion </strong>
-              <div class="items_arrange">
-                <%= @background.religion %>
+              <div class= "form-group" >
+                <strong> Religion </strong>
+                <div class="items_arrange">
+                  <%= @background.religion %>
+                </div>
               </div>
-            </div>
-            <div class= "form-group" >
-              <strong> Living will </strong>
-              <div class="items_arrange">
-                <%= @background.living_will %>
+              <div class= "form-group" >
+                <strong> Living will </strong>
+                <div class="items_arrange">
+                  <%= @background.living_will %>
+                </div>
               </div>
-            </div>
-            <div class= "form-group" >
-              <strong> Notes </strong>
-              <div class="items_arrange">
-                <%= @background.notes %>
+              <div class= "form-group" >
+                <strong> Notes </strong>
+                <div class="items_arrange">
+                  <%= @background.notes %>
+                </div>
               </div>
-            </div>
 
             <% end %>
 
@@ -88,8 +88,10 @@
       <% if current_user.background.nil? == true %>
         <%= link_to "Register", new_background_path(@background), class:"btn btn-primary"%>
       <% else %>
-        <%= link_to "Edit", edit_background_path(@background), class:"btn btn-default" %>
+        <%= link_to "Edit", edit_background_path(@background), class:"btn btn-primary" %>
+        <%= link_to "Delete", background_path(@background), class:"btn btn-default" %>
       <% end %>
+
         </div>
       </div>
     </div>
