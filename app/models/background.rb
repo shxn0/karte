@@ -7,4 +7,6 @@ class Background < ActiveRecord::Base
   validates :occupation, presence: true
   validates :religion, presence: true
   validates :living_will, presence: true
+
+  belongs_to :user
 end

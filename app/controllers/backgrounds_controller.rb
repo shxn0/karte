@@ -1,12 +1,37 @@
 class BackgroundsController < ApplicationController
 
   def index
-    @backgrounds = Background.all
-    @backgrounds.each do |background|
-    # if background.user.id == current_user.id
 
+    if user_signed_in?
+      @backgrounds = Background.all
+      @backgrounds.each do |background|
+        if background.user.id == current_user.id
+          @background = current_user.background
+        else
+          render 'index'
+        end
+      end
+    else
+      redirect_to new_user_session_path
     end
+
+
+
+
+
+    # @backgrounds = Background.all
+    # @backgrounds.each do |background|
+      # if background.user.nil? == true
+        # render "new"
+      # else background.user.id == current_user.id
+        # @background = current_user.background
+      # end
+    # end
   end
+
+
+
+
 
   def new
     @background = Background.new
