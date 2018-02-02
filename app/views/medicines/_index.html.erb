@@ -1,0 +1,10 @@
+<ul>
+  <% @medicines.each do |medicine| %>
+    <% unless medicine.id.nil? %>
+      <span class="badge badge-primary"><%= medicine[:medicine_name] %></span>
+      <% end %>
+  <% end %>
+
+
+
+</ul>

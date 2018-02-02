@@ -8,6 +8,8 @@ class BackgroundsController < ApplicationController
       @backgrounds.each do |background|
         if background.user_id == current_user.id
           @background = current_user.background
+          @medicines = background.medicines
+          @medicine = background.medicines.build
         end
       end
     end
@@ -19,6 +21,10 @@ class BackgroundsController < ApplicationController
 
   def edit
   end
+
+
+
+
 
   def create
     @background = Background.new(backgrounds_params)

@@ -9,4 +9,6 @@ class Background < ActiveRecord::Base
   validates :living_will, presence: true
 
   belongs_to :user
+  has_many :medicines, dependent: :destroy
+
 end

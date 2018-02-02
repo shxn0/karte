@@ -1,8 +1,7 @@
 <div class="container-head col-sm-12 col-md-12 col-lg-12">
-  <h1>◆Your background info</h1>
+  <h1>◆background info</h1>
+  backgrounds_path
   <div class="container-head-content col-sm-12 col-md-12 col-lg-12">
-
-
     <div class="container-main col-sm-12 col-md-12 col-lg-12">
       <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
         <div class="wrapper-bg-form col-md-6 col-md-offset-3">
@@ -28,7 +27,7 @@
           <div class="blockquote ">
 
             <% if @background.nil? %>
-              <h4>Please register you background info </h4>
+              <h4>Please register your background info </h4>
             <% else %>
 
               <div class= "form-group" >
@@ -73,6 +72,7 @@
                   <%= @background.living_will %>
                 </div>
               </div>
+
               <div class= "form-group" >
                 <strong> Notes </strong>
                 <div class="items_arrange">
@@ -84,7 +84,7 @@
 
           </div>
 
-
+      <!-- ログインユーザの登録状況により表示画面を変更 -->
       <% if current_user.background.nil? == true %>
         <%= link_to "Register", new_background_path(@background), class:"btn btn-primary"%>
       <% else %>
@@ -97,3 +97,52 @@
     </div>
   </div>
 </div>
+
+<div class="container-main col-sm-12 col-md-12 col-lg-12">
+  <h1>◆Medicine info</h1>
+  <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
+    <div class="wrapper-bg-form col-md-6 col-md-offset-3">
+      
+      <%= render partial: 'medicines/index', locals: {background: @background, medicine: @medicine} %>
+      <%= render partial: 'medicines/form', locals: {background: @background, medicine: @medicine} %>
+
+    </div>
+  </div>
+</div>
+
+<div class="container-main col-sm-12 col-md-12 col-lg-12">
+  <h1>◆Past medical history</h1>
+  <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
+    <div class="wrapper-bg-form col-md-6 col-md-offset-3">
+
+    </div>
+  </div>
+</div>
+
+<script>
+
+const lists = document.getElementById('lists');
+const target = document.getElementById("btn");
+
+  target.addEventListener('click', function(){
+    const form = document.getElementById("name");
+    const list = document.createElement("li");
+    list.textContent = form.value;
+    // list.textContentに""を代入してリセットする
+
+    list.addEventListener('click', function(){
+
+    }, false);
+
+    lists.appendChild(list);
+    form.value ="";
+
+
+  },false);
+
+const deleteButton = document.getElementById("deleteButton");
+  deleteButton.addEventListener('click', function(){
+      lists.removeChild(lists.lastChild);
+  },false);
+
+</script>

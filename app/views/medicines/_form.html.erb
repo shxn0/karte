@@ -1,0 +1,24 @@
+<%= form_for([background, medicine]) do |f| %>
+  <% if medicine.errors.any? %>
+  <div id= "error_explanation" >
+    <h2> <%= medicine.errors.count %>件のエラーがあります</h2>
+    <ul>
+      <%= medicine.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class= "form-group" >
+    <%= f.hidden_field :background_id %>
+    <div class="items_arrange">
+      <%= f.text_field :medicine_name, class:"form-control", placeholder:"Medicine Name" %>
+    </div>
+  </div>
+
+  <div class="wrapper-bg-form-submit">
+    <%= f.submit 'Add', class: 'btn btn-primary' %>
+  </div>
+
+<% end %>
