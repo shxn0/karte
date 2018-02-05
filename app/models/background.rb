@@ -10,5 +10,7 @@ class Background < ActiveRecord::Base
 
   belongs_to :user
   has_many :medicines, dependent: :destroy
+  has_many :allergies, dependent: :destroy
+
 
 end

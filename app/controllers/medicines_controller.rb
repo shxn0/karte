@@ -2,26 +2,30 @@ class MedicinesController < ApplicationController
 
   def create
     @medicine = current_user.background.medicines.build(medicines_params)
-    @background = @medicine.background
-    @medicines = @background.medicines
+    # @background = @medicine.background
+    # @medicines = @background.medicines
 
-    if @medicine.save
-      respond_to do |format|
+    respond_to do |format|
+      if @medicine.save
         format.html {redirect_to backgrounds_path}
         format.js {render :index}
+      else
+        format.html {render :index}
       end
-    else
-      format.html {render :index}
     end
-  end
-
-  def show
-    @medicine = Medicine.find(params[:id])
   end
 
   def destroy
 
-
+    @medicine = Medicine.find(params[:id])
+    respond_to do |format|
+      if @medicine.destroy
+        format.html {redirect_to backgrounds_path}
+        format.js {render :index}
+      else
+        format.html {render :index}
+      end
+    end
   end
 
   private

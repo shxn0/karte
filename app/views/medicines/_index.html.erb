@@ -1,9 +1,8 @@
 <ul>
-  <% @medicines.each do |medicine| %>
+  <% medicines.each do |medicine| %>
     <% unless medicine.id.nil? %>
       <span class="badge badge-primary"><%= medicine[:medicine_name] %></span>
-      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-      <%= link_to '', background_medicine_path(medicine), class:"glyphicon glyphicon-remove", method: :delete, remote: true, data:{confirm:'Are you sure to remove?'} %>
+      <%= link_to "", background_medicine_path(medicine.background, medicine), class:"glyphicon glyphicon-remove", method: :delete, remote: true %>
     <% end %>
   <% end %>
 </ul>

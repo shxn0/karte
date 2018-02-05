@@ -99,8 +99,9 @@
 </div>
 
 <div class="container-main col-sm-12 col-md-12 col-lg-12">
-  <h1>◆Medicine info</h1>
+  <h1>◆Medicines</h1>
   <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
+    <!-- <h3><%= @background.medicines.count %> medicines</h3> -->
     <div class="wrapper-bg-form col-md-6 col-md-offset-3">
     <div id="medicines_area">
       <%= render partial: 'medicines/index', locals: {background: @background, medicines: @medicines} %>
@@ -110,6 +111,21 @@
   </div>
 </div>
 
+
+<div class="container-main col-sm-12 col-md-12 col-lg-12">
+  <h1>◆Allergies</h1>
+  <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
+    <!-- <h3><%= @background.allergies.count %> allergies</h3> -->
+    <div class="wrapper-bg-form col-md-6 col-md-offset-3">
+    <div id="allergies_area">
+      <%= render partial: 'allergies/index', locals: {background: @background, allergies: @allergies} %>
+    </div>
+      <%= render partial: 'allergies/form', locals: {background: @background, allergy: @allergy} %>
+    </div>
+  </div>
+</div>
+
+
 <div class="container-main col-sm-12 col-md-12 col-lg-12">
   <h1>◆Past medical history</h1>
   <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
@@ -118,8 +134,6 @@
     </div>
   </div>
 </div>
-
-
 
 <!-- <script>
 

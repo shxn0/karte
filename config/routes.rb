@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   resources :backgrounds do
     resources :medicines, on: :collection
+    resources :allergies, on: :collection
   end
 
   root "top#index"
-
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -10,6 +10,8 @@ class BackgroundsController < ApplicationController
           @background = current_user.background
           @medicines = background.medicines
           @medicine = background.medicines.build
+          @allergies = background.allergies
+          @allergy = background.allergies.build
         end
       end
     end
@@ -21,10 +23,6 @@ class BackgroundsController < ApplicationController
 
   def edit
   end
-
-
-
-
 
   def create
     @background = Background.new(backgrounds_params)
