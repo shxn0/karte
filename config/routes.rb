@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     resources :allergies, on: :collection
   end
 
+  resources :past_medical_histories
+
+
   root "top#index"
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
 

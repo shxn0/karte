@@ -11,6 +11,5 @@ class Background < ActiveRecord::Base
   belongs_to :user
   has_many :medicines, dependent: :destroy
   has_many :allergies, dependent: :destroy
-
-
+  has_one :past_medical_history, dependent: :destroy
 end

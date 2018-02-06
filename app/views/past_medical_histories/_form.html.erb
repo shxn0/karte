@@ -1,0 +1,41 @@
+<div class="container-main col-sm-12 col-md-12 col-lg-12">
+  <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
+  <div class="wrapper-bg-form col-md-6 col-md-offset-3">
+    <%= form_for(@past_medical_history) do |f| %>
+
+    <% if @past_medical_history.errors.any? %>
+      <div id= "error_explanation">
+        <h2 class= "text-danger"><%= @past_medical_history.errors.count %> errors have been detected</h2>
+        <ul>
+          <% @past_medical_history.errors.full_messages.each do |msg| %>
+            <li class= "text-danger"><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <span class="badge badge-primary">Your past medical history info</span>
+      <div class="blockquote ">
+
+        <%= f.hidden_field :background_id %>
+        <div class= "form-group" >
+          <%= f.label :brain_disease_in_the_past,"Have you ever had brain disease in the past?", {class: 'form-label'} %>
+          <div class="items_arrange">
+            <%= f.radio_button :brain_disease_in_the_past, 0, {checked: true} %> Yes
+            <%= f.radio_button :brain_disease_in_the_past, 1, {} %> No
+          </div>
+        </div>
+
+      </div>
+
+        <div class="wrapper-bg-form-submit">
+          <%= link_to "Back to your past_medical_history info", backgrounds_path, class:"btn btn-neutral" %>
+          <%= f.submit 'Register', class: 'btn btn-primary' %>
+        </div>
+
+        <% end %>
+
+      </div>
+  </div>
+  </div>
+</div>

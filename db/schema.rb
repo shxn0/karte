@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180205115227) do
+ActiveRecord::Schema.define(version: 20180205143659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,18 @@ ActiveRecord::Schema.define(version: 20180205115227) do
     t.string   "medicine_name"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "past_medical_histories", force: :cascade do |t|
+    t.integer  "background_id"
+    t.string   "icd_code"
+    t.boolean  "brain_disease_in_the_past",   default: false, null: false
+    t.boolean  "heart_disease_in_the_past",   default: false, null: false
+    t.boolean  "surgery_in_the_past",         default: false, null: false
+    t.boolean  "hospitalized_in_the_past",    default: false, null: false
+    t.boolean  "attending_to_a_hospital_now", default: false, null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
   end
 
   create_table "users", force: :cascade do |t|
