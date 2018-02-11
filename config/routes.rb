@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :past_medical_histories
+  resources :present_illnesses
 
 
   root "top#index"

@@ -17,12 +17,55 @@
     <span class="badge badge-primary">Your past medical history info</span>
       <div class="blockquote ">
 
+        <div class= "form-group" >
+          <%= f.label :icd_code %>
+          <div class="items_arrange">
+            <%= f.text_field :icd_code, class:"form-control", placeholder:"Name" %>
+          </div>
+        </div>
+
         <%= f.hidden_field :background_id %>
         <div class= "form-group" >
           <%= f.label :brain_disease_in_the_past,"Have you ever had brain disease in the past?", {class: 'form-label'} %>
           <div class="items_arrange">
-            <%= f.radio_button :brain_disease_in_the_past, 0, {checked: true} %> Yes
-            <%= f.radio_button :brain_disease_in_the_past, 1, {} %> No
+            <%= f.radio_button :brain_disease_in_the_past, true %> Yes
+            <%= f.radio_button :brain_disease_in_the_past, false, {} %> No
+          </div>
+        </div>
+
+        <%= f.hidden_field :background_id %>
+        <div class= "form-group" >
+          <%= f.label :heart_disease_in_the_past,"Have you ever had heart disease in the past?", {class: 'form-label'} %>
+          <div class="items_arrange">
+            <%= f.radio_button :heart_disease_in_the_past, true %> Yes
+            <%= f.radio_button :heart_disease_in_the_past, false, {} %> No
+          </div>
+        </div>
+
+        <%= f.hidden_field :background_id %>
+        <div class= "form-group" >
+          <%= f.label :surgery_in_the_past,"Have you ever had surgery in the past?", {class: 'form-label'} %>
+          <div class="items_arrange">
+            <%= f.radio_button :surgery_in_the_past, true %> Yes
+            <%= f.radio_button :surgery_in_the_past, false, {} %> No
+          </div>
+        </div>
+
+        <%= f.hidden_field :background_id %>
+        <div class= "form-group" >
+          <%= f.label :hospitalized_in_the_past,"Have you ever been hospitalized in the past?", {class: 'form-label'} %>
+          <div class="items_arrange">
+            <%= f.radio_button :hospitalized_in_the_past, true %> Yes
+            <%= f.radio_button :hospitalized_in_the_past, false, {} %> No
+          </div>
+        </div>
+
+        <%= f.hidden_field :background_id %>
+        <div class= "form-group" >
+          <%= f.label :attending_to_a_hospital_now,"Are you attending to a hospital now?", {class: 'form-label'} %>
+          <div class="items_arrange">
+            <%= f.radio_button :attending_to_a_hospital_now, true %> Yes
+            <%= f.radio_button :attending_to_a_hospital_now, false, {} %> No
           </div>
         </div>
 

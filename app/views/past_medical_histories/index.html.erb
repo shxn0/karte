@@ -22,7 +22,6 @@
         </div>
         <% end %>
 
-
         <span class="badge badge-primary">Your Past Medical History</span>
           <div class="blockquote ">
 
@@ -31,11 +30,62 @@
             <% else %>
 
               <div class= "form-group" >
+                <strong> ICD code </strong>
+                <div class="items_arrange">
+                  <%= @past_medical_history.icd_code %>
+                </div>
+              </div>
+
+              <div class= "form-group" >
                 <strong> Have you ever had brain disease in the past? </strong>
                 <div class="items_arrange">
                   <% if @past_medical_history.brain_disease_in_the_past == true %>
                     <%= "Yes" %>
                   <% else @past_medical_history.brain_disease_in_the_past == false %>
+                    <%= "No" %>
+                  <% end %>
+                </div>
+              </div>
+
+              <div class= "form-group" >
+                <strong> Have you ever had heart disease in the past? </strong>
+                <div class="items_arrange">
+                  <% if @past_medical_history.heart_disease_in_the_past == true %>
+                    <%= "Yes" %>
+                  <% else @past_medical_history.heart_disease_in_the_past == false %>
+                    <%= "No" %>
+                  <% end %>
+                </div>
+              </div>
+
+              <div class= "form-group" >
+                <strong> Have you ever had surgery in the past? </strong>
+                <div class="items_arrange">
+                  <% if @past_medical_history.surgery_in_the_past == true %>
+                    <%= "Yes" %>
+                  <% else @past_medical_history.surgery_in_the_past == false %>
+                    <%= "No" %>
+                  <% end %>
+                </div>
+              </div>
+
+              <div class= "form-group" >
+                <strong> Have you ever been hospitalized in the past? </strong>
+                <div class="items_arrange">
+                  <% if @past_medical_history.hospitalized_in_the_past == true %>
+                    <%= "Yes" %>
+                  <% else @past_medical_history.hospitalized_in_the_past == false %>
+                    <%= "No" %>
+                  <% end %>
+                </div>
+              </div>
+
+              <div class= "form-group" >
+                <strong> Are you attending to a hospital now? </strong>
+                <div class="items_arrange">
+                  <% if @past_medical_history.attending_to_a_hospital_now == true %>
+                    <%= "Yes" %>
+                  <% else @past_medical_history.attending_to_a_hospital_now == false %>
                     <%= "No" %>
                   <% end %>
                 </div>
