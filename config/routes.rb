@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :past_medical_histories
   resources :present_illnesses
+  resources :reviews
+
 
 
   root "top#index"

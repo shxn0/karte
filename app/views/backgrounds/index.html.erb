@@ -1,102 +1,99 @@
 <div class="container-head col-sm-12 col-md-12 col-lg-12">
   <h1>◆background info</h1>
   backgrounds_path
-  <div class="container-head-content col-sm-12 col-md-12 col-lg-12">
-    <div class="container-main col-sm-12 col-md-12 col-lg-12">
-      <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
-        <div class="wrapper-bg-form col-md-6 col-md-offset-3">
+</div>
+<div class="container-main col-sm-12 col-md-12 col-lg-12">
+  <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
+    <div class="wrapper-bg-form col-md-6 col-md-offset-3">
 
-        <% if notice.nil? == false %>
-        <div class="alert alert-success" role="alert">
-        	<div class="container">
-        		<div class="alert-icon">
-        			<i class="now-ui-icons ui-2_like"></i>
-        		</div>
-        		<strong>Well done!</strong> Your registration has been successfully compleated.
-        		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        				<span aria-hidden="true">
-        				<i class="now-ui-icons ui-1_simple-remove"></i>
-        			</span>
-        		</button>
-        	</div>
-        </div>
+    <% if notice.nil? == false %>
+    <div class="alert alert-success" role="alert">
+    	<div class="container">
+    		<div class="alert-icon">
+    			<i class="now-ui-icons ui-2_like"></i>
+    		</div>
+    		<strong>Well done!</strong> Your registration has been successfully compleated.
+    		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    				<span aria-hidden="true">
+    				<i class="now-ui-icons ui-1_simple-remove"></i>
+    			</span>
+    		</button>
+    	</div>
+    </div>
+    <% end %>
+
+    <span class="badge badge-primary">Your background info</span>
+      <div class="blockquote ">
+
+        <% if @background.nil? %>
+          <h4>Please register your background info </h4>
+        <% else %>
+
+          <div class= "form-group" >
+            <strong> Name </strong>
+            <div class="items_arrange">
+              <%= @background.name %>
+            </div>
+          </div>
+          <div class= "form-group" >
+            <strong> Age </strong>
+            <div class="items_arrange">
+              <%= @background.age %>
+            </div>
+          </div>
+          <div class= "form-group" >
+            <strong> Sex </strong>
+            <div class="items_arrange">
+              <%= @background.sex %>
+            </div>
+          </div>
+          <div class= "form-group" >
+            <strong> Country </strong>
+            <div class="items_arrange">
+              <%= @background.country %>
+            </div>
+          </div>
+          <div class= "form-group" >
+            <strong> Occupation </strong>
+            <div class="items_arrange">
+              <%= @background.occupation %>
+            </div>
+          </div>
+          <div class= "form-group" >
+            <strong> Religion </strong>
+            <div class="items_arrange">
+              <%= @background.religion %>
+            </div>
+          </div>
+          <div class= "form-group" >
+            <strong> Living will </strong>
+            <div class="items_arrange">
+              <%= @background.living_will %>
+            </div>
+          </div>
+          <div class= "form-group" >
+            <strong> Notes </strong>
+            <div class="items_arrange">
+              <%= @background.notes %>
+            </div>
+          </div>
         <% end %>
 
-
-        <span class="badge badge-primary">Your background info</span>
-          <div class="blockquote ">
-
-            <% if @background.nil? %>
-              <h4>Please register your background info </h4>
-            <% else %>
-
-              <div class= "form-group" >
-                <strong> Name </strong>
-                <div class="items_arrange">
-                  <%= @background.name %>
-                </div>
-              </div>
-              <div class= "form-group" >
-                <strong> Age </strong>
-                <div class="items_arrange">
-                  <%= @background.age %>
-                </div>
-              </div>
-              <div class= "form-group" >
-                <strong> Sex </strong>
-                <div class="items_arrange">
-                  <%= @background.sex %>
-                </div>
-              </div>
-              <div class= "form-group" >
-                <strong> Country </strong>
-                <div class="items_arrange">
-                  <%= @background.country %>
-                </div>
-              </div>
-              <div class= "form-group" >
-                <strong> Occupation </strong>
-                <div class="items_arrange">
-                  <%= @background.occupation %>
-                </div>
-              </div>
-              <div class= "form-group" >
-                <strong> Religion </strong>
-                <div class="items_arrange">
-                  <%= @background.religion %>
-                </div>
-              </div>
-              <div class= "form-group" >
-                <strong> Living will </strong>
-                <div class="items_arrange">
-                  <%= @background.living_will %>
-                </div>
-              </div>
-
-              <div class= "form-group" >
-                <strong> Notes </strong>
-                <div class="items_arrange">
-                  <%= @background.notes %>
-                </div>
-              </div>
-
-            <% end %>
-
-          </div>
-
-      <!-- ログインユーザの登録状況により表示画面を変更 -->
-      <% if current_user.background.nil? == true %>
-        <%= link_to "Register", new_background_path(@background), class:"btn btn-primary"%>
-      <% else %>
-        <%= link_to "Edit", edit_background_path(@background), class:"btn btn-primary" %>
-        <%= link_to "Delete", background_path(@background), class:"btn btn-default" %>
-      <% end %>
-
-        </div>
       </div>
+
+  <!-- ログインユーザの登録状況により表示画面を変更 -->
+  <% if current_user.background.nil? == true %>
+    <%= link_to "Register", new_background_path(@background), class:"btn btn-primary"%>
+  <% else %>
+    <%= link_to "Edit", edit_background_path(@background), class:"btn btn-primary" %>
+    <%= link_to "Delete", background_path(@background), class:"btn btn-default" %>
+  <% end %>
+
     </div>
   </div>
 </div>
+  <!-- </div> -->
+
 
 <div class="container-main col-sm-12 col-md-12 col-lg-12">
   <h1>◆Medicines</h1>
@@ -112,7 +109,7 @@
 </div>
 
 
-<div class="container-main col-sm-12 col-md-12 col-lg-12">
+<div class="container-main-last col-sm-12 col-md-12 col-lg-12">
   <h1>◆Allergies</h1>
   <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
     <!-- <h3><%= @background.allergies.count %> allergies</h3> -->

@@ -19,3 +19,6 @@
 $(document).ready(function(e) {
     $('img[usemap]').rwdImageMaps();
 })
+
+
+$('[data-toggle="popover"]').popover();

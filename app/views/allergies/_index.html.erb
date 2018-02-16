@@ -1,8 +1,10 @@
 <ul>
   <% allergies.each do |allergy| %>
     <% unless allergy.id.nil? %>
+    <div class="allergy">
       <span class="badge badge-primary"><%= allergy[:allergy_name] %></span>
-      <%= link_to "", background_allergy_path(allergy.background, allergy), class:"glyphicon glyphicon-remove", method: :delete, remote: true %>
+      <%= link_to "", background_allergy_path(allergy.background, allergy), class:"glyphicon glyphicon-remove", method: :delete, remote: true, data:{confirm:"Are you sure to remove?"} %>
+    </div>
     <% end %>
   <% end %>
 </ul>

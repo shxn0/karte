@@ -28,17 +28,13 @@
           <%= f.label :Age %>
           <div class="items_arrange">
             <%= f.text_field :age, class:"form-control", placeholder:"Age" %>
-            <%#= f.select :age, Background.ages.keys.to_a %>
-            <%#= f.select :age, Background.ages.values.to_a %>
-
           </div>
         </div>
 
         <div class= "form-group" >
           <%= f.label :Sex %>
           <div class="items_arrange">
-          <%#= f.text_field :sex, class:"form-control", placeholder:"Sex" %>
-          <%= f.select :sex, {"Male" => "male", "Female" => "female"} %>
+          <%= f.text_field :sex, class:"form-control", placeholder:"Sex" %>
           </div>
         </div>
 
@@ -66,8 +62,7 @@
         <div class= "form-group" >
           <%= f.label :Living_will %>
           <div class="items_arrange">
-            <%= f.select :living_will, {"Yes" => "Yes", "No" => "No"} %>
-            <%#= f.text_field :living_will, class:"form-control", placeholder:"Living_will" %>
+            <%= f.text_field :living_will, class:"form-control", placeholder:"Living_will" %>
           </div>
         </div>
 
@@ -93,4 +88,6 @@
     <% end %>
 
   </div>
+</div>
+<div class="container-main-last col-xs-12 col-sm-12 col-md-12 col-lg-12">
 </div>
