@@ -22,7 +22,7 @@ class BackgroundsController < ApplicationController
   end
 
   def edit
-    @numbers = [*(0...11)]
+
   end
 
   def create
