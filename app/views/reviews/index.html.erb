@@ -3,14 +3,26 @@
   reviews_path
 </div>
 
-
 <div class="container-main col-sm-12 col-md-12 col-lg-12">
   <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
 
-    <%= link_to "Create page", new_review_path, class:"btn btn-primary" %>
+    <%= link_to "Go to check lists", new_review_path, class:"btn btn-primary" %>
 
-    <%= @review %>
+    <% if @review.nil? == false %>
+      <% @target_columns.each do |target_column| %>
+
+      <%# TODO: カラムがtrueの値だけ表示されるようにする。現状は症状名のカラムが表示される %>
+        <strong><p><%= target_column %></p></strong>
+      <% end %>
+
+
+
+
+    <% end %>
 
   </div>
 
+</div>
+
+<div class="container-main-last col-sm-12 col-md-12 col-lg-12">
 </div>

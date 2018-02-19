@@ -1,6 +1,6 @@
 <div class="container-main col-sm-12 col-md-12 col-lg-12">
   <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
-  <div class="wrapper-bg-form col-md-6 col-md-offset-3">
+  <div class="wrapper-review-form col-md-8 col-md-offset-2">
 
     <%= form_for @review do |f| %>
     <% if @review.errors.any? %>
@@ -15,41 +15,455 @@
     <% end %>
 
 
+        <div class="wrap">
+          <%# columns = Review.column_names %>
+          <%# target_columns = columns[2...-2] %>
+
+          <div class="bottuns">
+            <div class="check skin_btn btn btn-default">Skin</div>
+            <div class="check head_btn btn btn-default">Head</div>
+            <div class="check ears_btn btn btn-default">Ears</div>
+            <div class="check eyes_btn btn btn-default">Eyes</div>
+            <div class="check nose_btn btn btn-default">Nose</div>
+            <div class="check throat_btn btn btn-default">Throat</div>
+            <div class="check neck_btn btn btn-default">Neck</div>
+            <div class="check breasts_btn btn btn-default">Breasts</div>
+            <div class="check respiratory_btn btn btn-default">Respiratory</div>
+            <div class="check gastrointestina_btn btn btn-default">Gastrointestina</div>
+            <div class="check urinary_btn btn btn-default">Urinary</div>
+            <div class="check vascular_btn btn btn-default">Vascular</div>
+            <div class="check musculoskeletal_btn btn btn-default">Musculoskeletal</div>
+            <div class="check neurologic_btn btn btn-default">Neurologic</div>
+            <div class="check hematologic_btn btn btn-default">Hematologic</div>
+            <div class="check endocrine_btn btn btn-default">Endocrine</div>
+            <div class="check psychiatric_btn btn btn-default">Psychiatric</div>
+          </div>
+
+          <div class="review_of_system">
 
 
-    <table class="table table-striped">
-        <tr>
-          <!-- <th>General</th> -->
-          <!-- <th>項目2</th> -->
-          <!-- <th>項目3</th> -->
-        </tr>
+          <div class="general">
+            <h3>General</h3>
+            <table class="table table-striped table-bordered">
+            <% @target_columns.each do |target_column| %>
+              <% if  /^General./ =~ target_column %>
+                <% sym_target_column = target_column.to_sym %>
+                <tr>
+                  <td>
+                  <div class= "form-group" >
+                    <%= f.label $' %>
+                    <%= f.check_box sym_target_column %>
+                  </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+            </table >
+          </div>
+          <div class="skin">
+            <h3>Skin</h3>
+            <table class="table table-striped table-bordered">
+            <% @target_columns.each do |target_column| %>
+              <% if  /^Skin./ =~ target_column %>
+                <% sym_target_column = target_column.to_sym %>
+                <tr>
+                  <td>
+                  <div class= "form-group" >
+                    <%= f.label $' %>
+                    <%= f.check_box sym_target_column %>
+                  </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+            </table >
+          </div>
+          <div class="head">
+            <h3>Head</h3>
+            <table class="table table-striped table-bordered ">
+            <% @target_columns.each do |target_column| %>
+              <% if  /^Head./ =~ target_column %>
+                <% sym_target_column = target_column.to_sym %>
+                <tr>
+                  <td>
+                  <div class= "form-group" >
+                    <%= f.label $' %>
+                    <%= f.check_box sym_target_column %>
+                  </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+            </table >
+          </div>
+          <div class="ears">
+            <h3>Ears</h3>
+            <table class="table table-striped table-bordered ">
+            <% @target_columns.each do |target_column| %>
+              <% if  /^Ears./ =~ target_column %>
+                <% sym_target_column = target_column.to_sym %>
+                <tr>
+                  <td>
+                  <div class= "form-group" >
+                    <%= f.label $' %>
+                    <%= f.check_box sym_target_column %>
+                  </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+            </table >
+          </div>
+          <div class="eyes">
+            <h3>Eyes</h3>
+            <table class="table table-striped table-bordered ">
+            <% @target_columns.each do |target_column| %>
+              <% if  /^Eyes./ =~ target_column %>
+                <% sym_target_column = target_column.to_sym %>
+                <tr>
+                  <td>
+                  <div class= "form-group" >
+                    <%= f.label $' %>
+                    <%= f.check_box sym_target_column %>
+                  </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+            </table >
+          </div>
+          <div class="nose">
+            <h3>Nose</h3>
+            <table class="table table-striped table-bordered ">
+            <% @target_columns.each do |target_column| %>
+              <% if  /^Nose./ =~ target_column %>
+                <% sym_target_column = target_column.to_sym %>
+                <tr>
+                  <td>
+                  <div class= "form-group" >
+                    <%= f.label $' %>
+                    <%= f.check_box sym_target_column %>
+                  </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+            </table >
+          </div>
+          <div class="throat">
+            <h3>Throat</h3>
+            <table class="table table-striped table-bordered ">
+            <% @target_columns.each do |target_column| %>
+              <% if  /^Throat./ =~ target_column %>
+                <% sym_target_column = target_column.to_sym %>
+                <tr>
+                  <td>
+                  <div class= "form-group" >
+                    <%= f.label $' %>
+                    <%= f.check_box sym_target_column %>
+                  </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+            </table >
+          </div>
+          <div class="neck">
+            <h3>Neck</h3>
+            <table class="table table-striped table-bordered ">
+            <% @target_columns.each do |target_column| %>
+              <% if  /^Neck./ =~ target_column %>
+                <% sym_target_column = target_column.to_sym %>
+                <tr>
+                  <td>
+                  <div class= "form-group" >
+                    <%= f.label $' %>
+                    <%= f.check_box sym_target_column %>
+                  </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+            </table >
+          </div>
+          <div class="breasts">
+            <h3>Breasts</h3>
+            <table class="table table-striped table-bordered ">
+            <% @target_columns.each do |target_column| %>
+              <% if  /^Breasts./ =~ target_column %>
+                <% sym_target_column = target_column.to_sym %>
+                <tr>
+                  <td>
+                  <div class= "form-group" >
+                    <%= f.label $' %>
+                    <%= f.check_box sym_target_column %>
+                  </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+            </table >
+          </div>
+          <div class="respiratory">
+            <h3>Respiratory</h3>
+            <table class="table table-striped table-bordered ">
+            <% @target_columns.each do |target_column| %>
+              <% if  /^Respiratory./ =~ target_column %>
+                <% sym_target_column = target_column.to_sym %>
+                <tr>
+                  <td>
+                  <div class= "form-group" >
+                    <%= f.label $' %>
+                    <%= f.check_box sym_target_column %>
+                  </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+            </table >
+          </div>
+          <div class="gastrointestina">
+            <h3>Gastrointestina</h3>
+            <table class="table table-striped table-bordered ">
+            <% @target_columns.each do |target_column| %>
+              <% if  /^Gastrointestina./ =~ target_column %>
+                <% sym_target_column = target_column.to_sym %>
+                <tr>
+                  <td>
+                  <div class= "form-group" >
+                    <%= f.label $' %>
+                    <%= f.check_box sym_target_column %>
+                  </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+            </table >
+          </div>
+          <div class="urinary">
+            <h3>Urinary</h3>
+            <table class="table table-striped table-bordered ">
+            <% @target_columns.each do |target_column| %>
+              <% if  /^Urinary./ =~ target_column %>
+                <% sym_target_column = target_column.to_sym %>
+                <tr>
+                  <td>
+                  <div class= "form-group" >
+                    <%= f.label $' %>
+                    <%= f.check_box sym_target_column %>
+                  </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+            </table >
+          </div>
+          <div class="vascular">
+            <h3>Vascular</h3>
+            <table class="table table-striped table-bordered ">
+            <% @target_columns.each do |target_column| %>
+              <% if  /^Vascular./ =~ target_column %>
+                <% sym_target_column = target_column.to_sym %>
+                <tr>
+                  <td>
+                  <div class= "form-group" >
+                    <%= f.label $' %>
+                    <%= f.check_box sym_target_column %>
+                  </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+            </table >
+          </div>
+          <div class="musculoskeletal">
+            <h3>Musculoskeletal</h3>
+            <table class="table table-striped table-bordered ">
+            <% @target_columns.each do |target_column| %>
+              <% if  /^Musculoskeletal./ =~ target_column %>
+                <% sym_target_column = target_column.to_sym %>
+                <tr>
+                  <td>
+                  <div class= "form-group" >
+                    <%= f.label $' %>
+                    <%= f.check_box sym_target_column %>
+                  </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+            </table >
+          </div>
+          <div class="neurologic">
+            <h3>Neurologic</h3>
+            <table class="table table-striped table-bordered ">
+            <% @target_columns.each do |target_column| %>
+              <% if  /^Neurologic./ =~ target_column %>
+                <% sym_target_column = target_column.to_sym %>
+                <tr>
+                  <td>
+                  <div class= "form-group" >
+                    <%= f.label $' %>
+                    <%= f.check_box sym_target_column %>
+                  </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+            </table >
+          </div>
+          <div class="hematologic">
+            <h3>Hematologic</h3>
+            <table class="table table-striped table-bordered ">
+            <% @target_columns.each do |target_column| %>
+              <% if  /^Hematologic./ =~ target_column %>
+                <% sym_target_column = target_column.to_sym %>
+                <tr>
+                  <td>
+                  <div class= "form-group" >
+                    <%= f.label $' %>
+                    <%= f.check_box sym_target_column %>
+                  </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+            </table >
+          </div>
+          <div class="endocrine">
+            <h3>Endocrine</h3>
+            <table class="table table-striped table-bordered ">
+            <% @target_columns.each do |target_column| %>
+              <% if  /^Endocrine./ =~ target_column %>
+                <% sym_target_column = target_column.to_sym %>
+                <tr>
+                  <td>
+                  <div class= "form-group" >
+                    <%= f.label $' %>
+                    <%= f.check_box sym_target_column %>
+                  </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+            </table >
+          </div>
+          <div class="psychiatric">
+            <h3>Psychiatric</h3>
+            <table class="table table-striped table-bordered ">
+            <% @target_columns.each do |target_column| %>
+              <% if  /^Psychiatric./ =~ target_column %>
+                <% sym_target_column = target_column.to_sym %>
+                <tr>
+                  <td>
+                  <div class= "form-group" >
+                    <%= f.label $' %>
+                    <%= f.check_box sym_target_column %>
+                  </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+            </table >
+          </div>
 
-        <tr>
-          <td>
-            <div class= "form-group" >
-            <%= f.label :Weight_loss_or_gain %>
-            <%= f.check_box :General_Weight_loss_or_gain, class:"form-control" %>
-            </div>
-          </td>
-        </tr>
-
-      </table>
-
-
-
-
+          </div>
+        </div>
 
     <div class="wrapper-bg-form-submit">
-      <%= link_to "Back to your Background info", backgrounds_path, class:"btn btn-neutral" %>
+      <%= link_to "Back to your Background info", reviews_path, class:"btn btn-neutral" %>
       <%= f.submit 'Register', class: 'btn btn-primary' %>
     </div>
 
     <% end %>
 
   </div>
+
+
+
+
   </div>
+  <button type="button" class="btn btn-primary btn-icon btn-round btn-lg"><strong>Top</strong></button>
+
 </div>
 
+<script>
 
-<!-- <div class="items_arrange">
-</div> -->
+$(function(){
+
+  $('.check').hover(
+    function (){
+      $(this).removeClass('btn-default');
+      $(this).addClass('btn-primary');
+    },
+    function (){
+      $(this).removeClass('btn-primary');
+      $(this).addClass('btn-default');
+    }
+  );
+
+  $('.skin_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.skin').offset().top});
+  });
+
+  $('.head_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.head').offset().top});
+  });
+  $('.ears_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.ears').offset().top});
+  });
+  $('.eyes_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.eyes').offset().top});
+  });
+  $('.nose_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.nose').offset().top});
+  });
+  $('.throat_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.throat').offset().top});
+  });
+  $('.neck_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.neck').offset().top});
+  });
+  $('.breasts_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.breasts').offset().top});
+  });
+  $('.respiratory_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.respiratory').offset().top});
+  });
+  $('.gastrointestina_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.gastrointestina').offset().top});
+  });
+  $('.urinary_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.urinary').offset().top});
+  });
+  $('.vascular_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.vascular').offset().top});
+  });
+  $('.musculoskeletal_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.musculoskeletal').offset().top});
+  });
+  $('.neurologic_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.neurologic').offset().top});
+  });
+  $('.hematologic_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.hematologic').offset().top});
+  });
+  $('.endocrine_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.endocrine').offset().top});
+  });
+
+  // HACK: psychiatricは画面最下部にあるために取得できないため、.endocrineをセレクトにして現状は対応。
+  $('.psychiatric_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.endocrine').offset().top});
+  });
+  $('.btn-icon').click(function(){
+      $("html,body").animate({scrollTop:$('.container-main-content').offset().top});
+  });
+
+
+
+});
+
+
+
+</script>
