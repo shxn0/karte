@@ -9,27 +9,40 @@
 
     <%= link_to "Go to check lists", new_review_path, class:"btn btn-primary" %>
 
-
-
-
     <div class="wrap">
+
+      <div class="bottuns">
+        <div class="check skin_btn btn btn-default">Skin</div>
+        <div class="check head_btn btn btn-default">Head</div>
+        <div class="check ears_btn btn btn-default">Ears</div>
+        <div class="check eyes_btn btn btn-default">Eyes</div>
+        <div class="check nose_btn btn btn-default">Nose</div>
+        <div class="check throat_btn btn btn-default">Throat</div>
+        <div class="check neck_btn btn btn-default">Neck</div>
+        <div class="check breasts_btn btn btn-default">Breasts</div>
+        <div class="check respiratory_btn btn btn-default">Respiratory</div>
+        <div class="check gastrointestina_btn btn btn-default">Gastrointestina</div>
+        <div class="check urinary_btn btn btn-default">Urinary</div>
+        <div class="check vascular_btn btn btn-default">Vascular</div>
+        <div class="check musculoskeletal_btn btn btn-default">Musculoskeletal</div>
+        <div class="check neurologic_btn btn btn-default">Neurologic</div>
+        <div class="check hematologic_btn btn btn-default">Hematologic</div>
+        <div class="check endocrine_btn btn btn-default">Endocrine</div>
+        <div class="check psychiatric_btn btn btn-default">Psychiatric</div>
+      </div>
 
     <% if @review.nil? == false %>
       <div class="review_of_system">
-
+        <p class="flash"><%= notice %><%= alert %></p>
+        <h3>General</h3>
         <div class="general">
-          <h3>General</h3>
           <table class="table table-striped table-bordered">
           <% @only_true_review.keys.each do |only_true_review_key| %>
-          <%# @target_columns.each do |target_column| %>
             <% if  /^General./ =~ only_true_review_key %>
-              <%# sym_target_column = target_column.to_sym %>
               <tr>
                 <td>
                 <div class= "form-group" >
                   <%= only_true_review_key %>
-                  <%#= only_true_review_key.value %>
-                  <%#= check_box sym_target_column %>
                 </div>
                 </td>
               </tr>
@@ -37,6 +50,283 @@
           <% end %>
           </table >
         </div>
+        <div class="skin">
+          <h3>Skin</h3>
+          <table class="table table-striped table-bordered">
+          <% @only_true_review.keys.each do |only_true_review_key| %>
+            <% if  /^Skin./ =~ only_true_review_key %>
+              <tr>
+                <td>
+                <div class= "form-group" >
+                  <%= only_true_review_key %>
+                </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+          </table >
+        </div>
+        <div class="head">
+          <h3>Head</h3>
+          <table class="table table-striped table-bordered">
+          <% @only_true_review.keys.each do |only_true_review_key| %>
+            <% if  /^Head./ =~ only_true_review_key %>
+              <tr>
+                <td>
+                <div class= "form-group" >
+                  <%= only_true_review_key %>
+                </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+          </table >
+        </div>
+        <div class="ears">
+          <h3>Ears</h3>
+          <table class="table table-striped table-bordered">
+          <% @only_true_review.keys.each do |only_true_review_key| %>
+            <% if  /^Ears./ =~ only_true_review_key %>
+              <tr>
+                <td>
+                <div class= "form-group" >
+                  <%= only_true_review_key %>
+                </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+          </table >
+        </div>
+        <div class="eyes">
+          <h3>Eyes</h3>
+          <table class="table table-striped table-bordered">
+          <% @only_true_review.keys.each do |only_true_review_key| %>
+            <% if  /^Eyes./ =~ only_true_review_key %>
+              <tr>
+                <td>
+                <div class= "form-group" >
+                  <%= only_true_review_key %>
+                </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+          </table >
+        </div>
+        <div class="nose">
+          <h3>Nose</h3>
+          <table class="table table-striped table-bordered">
+          <% @only_true_review.keys.each do |only_true_review_key| %>
+            <% if  /^Nose./ =~ only_true_review_key %>
+              <tr>
+                <td>
+                <div class= "form-group" >
+                  <%= only_true_review_key %>
+                </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+          </table >
+        </div>
+        <div class="throat">
+          <h3>Throat</h3>
+          <table class="table table-striped table-bordered">
+          <% @only_true_review.keys.each do |only_true_review_key| %>
+            <% if  /^Throat./ =~ only_true_review_key %>
+              <tr>
+                <td>
+                <div class= "form-group" >
+                  <%= only_true_review_key %>
+                </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+          </table >
+        </div>
+        <div class="neck">
+          <h3>Neck</h3>
+          <table class="table table-striped table-bordered">
+          <% @only_true_review.keys.each do |only_true_review_key| %>
+            <% if  /^Neck./ =~ only_true_review_key %>
+              <tr>
+                <td>
+                <div class= "form-group" >
+                  <%= only_true_review_key %>
+                </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+          </table >
+        </div>
+        <div class="breasts">
+          <h3>Breasts</h3>
+          <table class="table table-striped table-bordered">
+          <% @only_true_review.keys.each do |only_true_review_key| %>
+            <% if  /^Breasts./ =~ only_true_review_key %>
+              <tr>
+                <td>
+                <div class= "form-group" >
+                  <%= only_true_review_key %>
+                </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+          </table >
+        </div>
+        <div class="respiratory">
+          <h3>Respiratory</h3>
+          <table class="table table-striped table-bordered">
+          <% @only_true_review.keys.each do |only_true_review_key| %>
+            <% if  /^Respiratory./ =~ only_true_review_key %>
+              <tr>
+                <td>
+                <div class= "form-group" >
+                  <%= only_true_review_key %>
+                </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+          </table >
+        </div>
+        <div class="gastrointestina">
+          <h3>Gastrointestina</h3>
+          <table class="table table-striped table-bordered">
+          <% @only_true_review.keys.each do |only_true_review_key| %>
+            <% if  /^Gastrointestina./ =~ only_true_review_key %>
+              <tr>
+                <td>
+                <div class= "form-group" >
+                  <%= only_true_review_key %>
+                </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+          </table >
+        </div>
+        <div class="urinary">
+          <h3>Urinary</h3>
+          <table class="table table-striped table-bordered">
+          <% @only_true_review.keys.each do |only_true_review_key| %>
+            <% if  /^Urinary./ =~ only_true_review_key %>
+              <tr>
+                <td>
+                <div class= "form-group" >
+                  <%= only_true_review_key %>
+                </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+          </table >
+        </div>
+        <div class="vascular">
+          <h3>Vascular</h3>
+          <table class="table table-striped table-bordered">
+          <% @only_true_review.keys.each do |only_true_review_key| %>
+            <% if  /^Vascular./ =~ only_true_review_key %>
+              <tr>
+                <td>
+                <div class= "form-group" >
+                  <%= only_true_review_key %>
+                </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+          </table >
+        </div>
+        <div class="musculoskeletal">
+          <h3>Musculoskeletal</h3>
+          <table class="table table-striped table-bordered">
+          <% @only_true_review.keys.each do |only_true_review_key| %>
+            <% if  /^Musculoskeletal./ =~ only_true_review_key %>
+              <tr>
+                <td>
+                <div class= "form-group" >
+                  <%= only_true_review_key %>
+                </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+          </table >
+        </div>
+        <div class="neurologic">
+          <h3>Neurologic</h3>
+          <table class="table table-striped table-bordered">
+          <% @only_true_review.keys.each do |only_true_review_key| %>
+            <% if  /^Neurologic./ =~ only_true_review_key %>
+              <tr>
+                <td>
+                <div class= "form-group" >
+                  <%= only_true_review_key %>
+                </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+          </table >
+        </div>
+        <div class="hematologic">
+          <h3>Hematologic</h3>
+          <table class="table table-striped table-bordered">
+          <% @only_true_review.keys.each do |only_true_review_key| %>
+            <% if  /^Hematologic./ =~ only_true_review_key %>
+              <tr>
+                <td>
+                <div class= "form-group" >
+                  <%= only_true_review_key %>
+                </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+          </table >
+        </div>
+        <div class="endocrine">
+          <h3>Endocrine</h3>
+          <table class="table table-striped table-bordered">
+          <% @only_true_review.keys.each do |only_true_review_key| %>
+            <% if  /^Endocrine./ =~ only_true_review_key %>
+              <tr>
+                <td>
+                <div class= "form-group" >
+                  <%= only_true_review_key %>
+                </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+          </table >
+        </div>
+        <div class="psychiatric">
+          <h3>Psychiatric</h3>
+          <table class="table table-striped table-bordered">
+          <% @only_true_review.keys.each do |only_true_review_key| %>
+            <% if  /^Psychiatric./ =~ only_true_review_key %>
+              <tr>
+                <td>
+                <div class= "form-group" >
+                  <%= only_true_review_key %>
+                </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+          </table >
+        </div>
+
+
+
+
+
       </div>
     <% end %>
     </div>
@@ -54,3 +344,84 @@
 
 <div class="container-main-last col-sm-12 col-md-12 col-lg-12">
 </div>
+
+<script>
+
+$(function(){
+
+  $('.check').hover(
+    function (){
+      $(this).removeClass('btn-default');
+      $(this).addClass('btn-primary');
+    },
+    function (){
+      $(this).removeClass('btn-primary');
+      $(this).addClass('btn-default');
+    }
+  );
+
+  $('.skin_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.skin').offset().top});
+  });
+
+  $('.head_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.head').offset().top});
+  });
+  $('.ears_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.ears').offset().top});
+  });
+  $('.eyes_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.eyes').offset().top});
+  });
+  $('.nose_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.nose').offset().top});
+  });
+  $('.throat_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.throat').offset().top});
+  });
+  $('.neck_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.neck').offset().top});
+  });
+  $('.breasts_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.breasts').offset().top});
+  });
+  $('.respiratory_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.respiratory').offset().top});
+  });
+  $('.gastrointestina_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.gastrointestina').offset().top});
+  });
+  $('.urinary_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.urinary').offset().top});
+  });
+  $('.vascular_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.vascular').offset().top});
+  });
+  $('.musculoskeletal_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.musculoskeletal').offset().top});
+  });
+  $('.neurologic_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.neurologic').offset().top});
+  });
+  $('.hematologic_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.hematologic').offset().top});
+  });
+  $('.endocrine_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.endocrine').offset().top});
+  });
+
+  // HACK: psychiatricは画面最下部にあるために取得できないため、.endocrineをセレクトにして現状は対応。
+  $('.psychiatric_btn').click(function(){
+      $("html,body").animate({scrollTop:$('.endocrine').offset().top});
+  });
+  $('.btn-icon').click(function(){
+      $("html,body").animate({scrollTop:$('.container-main-content').offset().top});
+  });
+
+
+
+});
+
+
+
+</script>

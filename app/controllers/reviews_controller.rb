@@ -19,8 +19,13 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(reviews_params)
     @review.background_id = current_user.id
-    @review.save
-    redirect_to reviews_path
+    if @review.save
+      redirect_to reviews_path
+    else
+      set_review
+      set_target_columns
+      render 'index', notice: "review has already been created. "
+    end
   end
 
   private
