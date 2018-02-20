@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
 
+  before_action :set_review, only:[:edit, :update, :destroy]
+
   def index
     @reviews = Review.all
     @reviews.each do |review|
@@ -26,6 +28,16 @@ class ReviewsController < ApplicationController
       set_target_columns
       render 'index', notice: "review has already been created. "
     end
+  end
+
+  def edit
+    set_review
+  end
+
+  def destroy
+  end
+
+  def update
   end
 
   private

@@ -7,7 +7,6 @@
   <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
     <div class="wrapper-review-form col-md-8 col-md-offset-2">
 
-    <%= link_to "Go to check lists", new_review_path, class:"btn btn-primary" %>
 
     <div class="wrap">
 
@@ -32,6 +31,12 @@
       </div>
 
     <% if @review.nil? == false %>
+
+    <div class ="controls pull-right">
+      <%= link_to "Edit check list ", edit_review_path(@review), class:"btn btn-primary" %>
+      <%= link_to "Delete", review_path(@review), class:"btn btn-default" %>
+    </div>
+
       <div class="review_of_system">
         <p class="flash"><%= notice %><%= alert %></p>
         <h3>General</h3>
@@ -324,17 +329,17 @@
         </div>
 
 
-
-
+    <% else %>
 
       </div>
+
+      <div class ="controls pull-right">
+        <%= link_to "Register", new_review_path(@review), class:"btn btn-primary"%>
+        <%= link_to "Back to your review info", reviews_path, class:"btn btn-neutral" %>
+      </div>
+
     <% end %>
     </div>
-
-      <div class="wrapper-bg-form-submit">
-      <%= link_to "Back to your Background info", reviews_path, class:"btn btn-neutral" %>
-      <%#= f.submit 'Register', class: 'btn btn-primary' %>
-      </div>
 
 
 
