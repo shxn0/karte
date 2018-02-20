@@ -3,21 +3,19 @@
   <div class="wrapper-review-form col-md-8 col-md-offset-2">
 
     <%= form_for @review do |f| %>
-    <% if @review.errors.any? %>
-      <div id= "error_explanation">
-        <h2 class= "text-danger"><%= @review.errors.count %> errors have been detected</h2>
-        <ul>
-          <% @review.errors.full_messages.each do |msg| %>
-            <li class= "text-danger"><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+      <% if @review.errors.any? %>
+        <div id= "error_explanation">
+          <h2 class= "text-danger"><%= @review.errors.count %> errors have been detected</h2>
+          <ul>
+            <% @review.errors.full_messages.each do |msg| %>
+              <li class= "text-danger"><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
 
         <div class="wrap">
-          <%# columns = Review.column_names %>
-          <%# target_columns = columns[2...-2] %>
 
           <div class="bottuns">
             <div class="check skin_btn btn btn-default">Skin</div>
@@ -371,7 +369,7 @@
         </div>
 
     <div class="wrapper-bg-form-submit">
-      <%= link_to "Back to your Background info", reviews_path, class:"btn btn-neutral" %>
+      <%= link_to "Back to your Review info", reviews_path, class:"btn btn-neutral" %>
       <%= f.submit 'Register', class: 'btn btn-primary' %>
     </div>
 

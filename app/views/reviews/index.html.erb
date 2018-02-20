@@ -5,23 +5,51 @@
 
 <div class="container-main col-sm-12 col-md-12 col-lg-12">
   <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
+    <div class="wrapper-review-form col-md-8 col-md-offset-2">
 
     <%= link_to "Go to check lists", new_review_path, class:"btn btn-primary" %>
 
+
+
+
+    <div class="wrap">
+
     <% if @review.nil? == false %>
-      <% @target_columns.each do |target_column| %>
+      <div class="review_of_system">
 
-      <%# TODO: カラムがtrueの値だけ表示されるようにする。現状は症状名のカラムが表示される %>
-        <strong><p><%= target_column %></p></strong>
-      <% end %>
-
-
-
-
+        <div class="general">
+          <h3>General</h3>
+          <table class="table table-striped table-bordered">
+          <% @only_true_review.keys.each do |only_true_review_key| %>
+          <%# @target_columns.each do |target_column| %>
+            <% if  /^General./ =~ only_true_review_key %>
+              <%# sym_target_column = target_column.to_sym %>
+              <tr>
+                <td>
+                <div class= "form-group" >
+                  <%= only_true_review_key %>
+                  <%#= only_true_review_key.value %>
+                  <%#= check_box sym_target_column %>
+                </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+          </table >
+        </div>
+      </div>
     <% end %>
+    </div>
 
+      <div class="wrapper-bg-form-submit">
+      <%= link_to "Back to your Background info", reviews_path, class:"btn btn-neutral" %>
+      <%#= f.submit 'Register', class: 'btn btn-primary' %>
+      </div>
+
+
+
+    </div>
   </div>
-
 </div>
 
 <div class="container-main-last col-sm-12 col-md-12 col-lg-12">
