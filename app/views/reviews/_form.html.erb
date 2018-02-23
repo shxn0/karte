@@ -14,7 +14,6 @@
         </div>
       <% end %>
 
-
         <div class="wrap">
 
           <div class="bottuns">
@@ -39,6 +38,9 @@
 
           <div class="review_of_system">
 
+          <div class="wrapper-bg-form-submit">
+            <%= f.submit 'Register', class: 'btn btn-primary' %>
+          </div>
 
           <div class="general">
             <h3>General</h3>
@@ -381,7 +383,7 @@
 
 
   </div>
-  <button type="button" class="btn btn-primary btn-icon btn-round btn-lg"><strong>Top</strong></button>
+  <button type="button" class="btn btn-info btn-top btn-icon btn-round btn-lg"><strong>Top</strong></button>
 
 </div>
 
@@ -392,10 +394,10 @@ $(function(){
   $('.check').hover(
     function (){
       $(this).removeClass('btn-default');
-      $(this).addClass('btn-primary');
+      $(this).addClass('btn-info');
     },
     function (){
-      $(this).removeClass('btn-primary');
+      $(this).removeClass('btn-info');
       $(this).addClass('btn-default');
     }
   );

@@ -1,6 +1,11 @@
 <div class="container-head col-sm-12 col-md-12 col-lg-12">
-  <h1>◆background info</h1>
-  backgrounds_path
+  <h1><span class="under">Background info</span></h1>
+  <p class="explanations ">
+     Please register your background infomation to communicate doctors easier.
+     <br> If there is something you would like to write down regarding your background,
+     <br> Please write it down at Notes.
+  </p>
+
 </div>
 <div class="container-main col-sm-12 col-md-12 col-lg-12">
   <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
@@ -22,7 +27,7 @@
     </div>
     <% end %>
 
-    <span class="badge badge-primary">Your background info</span>
+    <span class="badge badge-info">Your background info</span>
       <div class="blockquote ">
 
         <% if @background.nil? %>
@@ -81,72 +86,75 @@
 
       </div>
 
-  <!-- ログインユーザの登録状況により表示画面を変更 -->
-  <% if current_user.background.nil? == true %>
-    <%= link_to "Register", new_background_path(@background), class:"btn btn-primary"%>
-  <% else %>
-    <%= link_to "Edit", edit_background_path(@background), class:"btn btn-primary" %>
-    <%= link_to "Delete", background_path(@background), class:"btn btn-default" %>
-  <% end %>
+    <!-- ログインユーザの登録状況により表示画面を変更 -->
+    <% if current_user.background.nil? == true %>
+      <%= link_to "Register", new_background_path(@background), class:"btn btn-info"%>
+    <% else %>
+      <%= link_to "Edit", edit_background_path(@background), class:"btn btn-info" %>
+      <%= link_to "Delete", background_path(@background), method: :delete, class:"btn btn-default" %>
+    <% end %>
 
     </div>
   </div>
 </div>
   <!-- </div> -->
 
-
+<% if @background.nil? %>
 <div class="container-main col-sm-12 col-md-12 col-lg-12">
-  <h1>◆Medicines</h1>
+  <h1><span class="under">Medicines</span></h1>
+  <p class="explanations ">
+     Please add Medicines you have taken.
+  </p>
   <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
-    <!-- <h3><%= @background.medicines.count %> medicines</h3> -->
     <div class="wrapper-bg-form col-md-6 col-md-offset-3">
-    <div id="medicines_area">
-      <%= render partial: 'medicines/index', locals: {background: @background, medicines: @medicines} %>
-    </div>
-      <%= render partial: 'medicines/form', locals: {background: @background, medicine: @medicine} %>
+      <h4>Please register your background info first </h4>
     </div>
   </div>
 </div>
+<% else %>
+  <div class="container-main col-sm-12 col-md-12 col-lg-12">
+    <h1><span class="under">Medicines</span></h1>
+    <p class="explanations ">
+       Please add Medicines you have taken.
+    </p>
+    <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
+      <div class="wrapper-bg-form col-md-6 col-md-offset-3">
+      <div id="medicines_area">
+        <%= render partial: 'medicines/index', locals: {background: @background, medicines: @medicines} %>
+      </div>
+        <%= render partial: 'medicines/form', locals: {background: @background, medicine: @medicine} %>
+      </div>
+    </div>
+  </div>
+<% end %>
 
 
+<% if @background.nil? %>
 <div class="container-main-last col-sm-12 col-md-12 col-lg-12">
-  <h1>◆Allergies</h1>
+  <h1><span class="under">Allergies</span></h1>
+  <p class="explanations ">
+     Please add Allergies you have.
+  </p>
   <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
-    <!-- <h3><%= @background.allergies.count %> allergies</h3> -->
     <div class="wrapper-bg-form col-md-6 col-md-offset-3">
-    <div id="allergies_area">
-      <%= render partial: 'allergies/index', locals: {background: @background, allergies: @allergies} %>
-    </div>
-      <%= render partial: 'allergies/form', locals: {background: @background, allergy: @allergy} %>
+      <h4>Please register your background info first </h4>
     </div>
   </div>
 </div>
 
-
-<!-- <script>
-
-const lists = document.getElementById('lists');
-const target = document.getElementById("btn");
-
-  target.addEventListener('click', function(){
-    const form = document.getElementById("name");
-    const list = document.createElement("li");
-    list.textContent = form.value;
-    // list.textContentに""を代入してリセットする
-
-    list.addEventListener('click', function(){
-
-    }, false);
-
-    lists.appendChild(list);
-    form.value ="";
-
-
-  },false);
-
-const deleteButton = document.getElementById("deleteButton");
-  deleteButton.addEventListener('click', function(){
-      lists.removeChild(lists.lastChild);
-  },false);
-
-</script> -->
+<% else %>
+  <div class="container-main-last col-sm-12 col-md-12 col-lg-12">
+    <h1><span class="under">Allergies</span></h1>
+    <p class="explanations ">
+       Please add Allergies you have.
+    </p>
+    <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
+      <div class="wrapper-bg-form col-md-6 col-md-offset-3">
+      <div id="allergies_area">
+        <%= render partial: 'allergies/index', locals: {background: @background, allergies: @allergies} %>
+      </div>
+        <%= render partial: 'allergies/form', locals: {background: @background, allergy: @allergy} %>
+      </div>
+    </div>
+  </div>
+<% end %>

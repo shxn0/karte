@@ -44,6 +44,11 @@ class BackgroundsController < ApplicationController
     end
   end
 
+  def destroy
+    @background.destroy
+    redirect_to backgrounds_path
+  end
+
   private
 
     def backgrounds_params

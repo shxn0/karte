@@ -1,29 +1,76 @@
-<div class="container-head col-sm-12 col-md-12 col-lg-12">
-  <h1>Top#index</h1>
-  <div class="container-head-content col-sm-12 col-md-12 col-lg-12">
+<div class="wrapper_with_footer "> <!-- footerを含むwrapper_with_footerクラスを作成 -->
+  <div class="wrapper"> <!-- footerを含まないwrapperクラスを作成 -->
 
-    <% if notice.nil? == false %>
-      <div class="alert alert-success col-md-6 col-md-offset-3" role="alert">
-      	<div class="container">
-      		<div class="alert-icon">
-      			<i class="now-ui-icons ui-2_like"></i>
-      		</div>
-      		<strong>Well done!</strong> <%= notice %><%= alert %>
-      		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      				<span aria-hidden="true">
-      				<i class="now-ui-icons ui-1_simple-remove"></i>
-      			</span>
-      		</button>
-      	</div>
-      </div>
-      <% end %>
+    <section class="main-header">
+      <h1>Make your medical communications <br /> more efficient</h1>
+    </section>
 
-    <div class="container-main col-sm-12 col-md-12 col-lg-12">
-      <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
-        <%= link_to "backgrounds_index", backgrounds_path %>
-      </div>
-
-
+    <div class="content-1">
+      <img src="<%= asset_path "docter2.jpg" %>">
     </div>
+
+    <section class="container-fluid">
+        <h2><span class="under">What can you do?</span></h2>
+        <div class="function-images">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="function-image">
+              <img src="<%= asset_path "bg.png" %>">
+              <div class="function-text text-muted">
+                <strong><p>Make your medical <br> communications faster </p></strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="function-image">
+              <img src="<%= asset_path "medi.png" %>">
+              <div class="function-text text-muted">
+                <strong><p>Register your  <br> past medical histories </p></strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="function-image">
+              <img src="<%= asset_path "ros.png" %>">
+              <div class="function-text text-muted">
+                <strong><p>Answer medical questions  <br> in advance </p></strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-2 col-xs-offset-5 col-md-2 col-md-offset-5">
+        <button class="btn btn-info btn-lg ">Get Started</button>
+      </div>
+
+
+    </section>
+
+    <div class="container-main-last col-sm-12 col-md-12 col-lg-12">
+      <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
+
+      <% if notice.nil? == false %>
+        <div class="alert alert-success col-md-6 col-md-offset-3" role="alert">
+        	<div class="container">
+        		<div class="alert-icon">
+        			<i class="now-ui-icons ui-2_like"></i>
+        		</div>
+        		<strong>Well done!</strong> <%= notice %><%= alert %>
+        		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        			<span aria-hidden="true">
+        				<i class="now-ui-icons ui-1_simple-remove"></i>
+        			</span>
+        		</button>
+        	</div>
+        </div>
+      <% end %>
+        <%#= link_to "backgrounds_index", backgrounds_path %>
+      </div>
+    </div>
+
   </div>
+
 </div>

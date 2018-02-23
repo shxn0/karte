@@ -1,11 +1,12 @@
 class ReviewsController < ApplicationController
 
-  before_action :set_review, only:[:edit, :update, :destroy]
+  before_action :set_review, only:[:edit,:update, :destroy]
 
   def index
     @reviews = Review.all
     @reviews.each do |review|
-      if current_user.id == review.background_id
+      # if current_user.id == review.background_id
+      if review.background_id == current_user.background.id
         @review = Review.find_by(background_id: review.background_id)
         @only_true_review = @review.attributes.select{|k, v| v ==  true} # @reviewからattributesで属性をハッシュ形式で取得後にtrueの値のみをインスタンス変数に代入
       end
@@ -20,7 +21,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(reviews_params)
-    @review.background_id = current_user.id
+    @review.background_id = current_user.background.id
     if @review.save
       redirect_to reviews_path
     else
@@ -31,14 +32,20 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    set_review
-  end
-
-  def destroy
+    set_target_columns
   end
 
   def update
+    @review.update(reviews_params)
+    redirect_to reviews_path
   end
+
+  def destroy
+    @review.destroy
+    redirect_to reviews_path
+  end
+
+
 
   private
 
@@ -50,7 +57,7 @@ class ReviewsController < ApplicationController
     def set_review
       @reviews = Review.all
       @reviews.each do |review|
-        if current_user.id == review.background_id
+        if review.background_id == current_user.background.id
           @review = Review.find_by(background_id: review.background_id)
         end
       end

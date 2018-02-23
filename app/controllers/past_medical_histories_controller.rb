@@ -3,13 +3,10 @@ class PastMedicalHistoriesController < ApplicationController
   before_action :set_past_medical_history, only: [:show, :edit, :update, :destroy]
 
   def index
-    if user_signed_in?
-      @backgrounds = Background.all
-      @backgrounds.each do |background|
-        if background.user_id == current_user.id
-          @background = current_user.background
-          @past_medical_history = @background.past_medical_history
-        end
+    @past_medical_histories = PastMedicalHistory.all
+    @past_medical_histories.each do |past_medical_history|
+      if past_medical_history.background_id == current_user.background.id
+        @past_medical_history = past_medical_history
       end
     end
   end
@@ -20,7 +17,7 @@ class PastMedicalHistoriesController < ApplicationController
 
   def create
     @past_medical_history = PastMedicalHistory.new(histories_params)
-    @past_medical_history.background_id = current_user.id
+    @past_medical_history.background_id = current_user.background.id
       if @past_medical_history.save
         redirect_to past_medical_histories_path, notice:"Your registration has been compleated"
       else
