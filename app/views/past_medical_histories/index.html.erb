@@ -1,6 +1,5 @@
 <div class="container-head col-sm-12 col-md-12 col-lg-12">
   <h1><span class="under">Past Medical History</span></h1>
-  past_medical_histories_path
 </div>
   <!-- <div class="container-head-content col-sm-12 col-md-12 col-lg-12"> -->
     <div class="container-main col-sm-12 col-md-12 col-lg-12">
@@ -23,13 +22,10 @@
         </div>
         <% end %>
 
-        <span class="badge badge-info">Your Past Medical History</span>
-          <div class="blockquote ">
 
-            <% if @past_medical_history.nil? %>
-              <h4>Please register your past medical history info </h4>
-            <% else %>
-
+        <% if @past_medical_history.nil? == false %>
+          <span class="badge badge-info">Your Past Medical History</span>
+            <div class="blockquote ">
               <div class= "form-group" >
                 <strong> ICD code </strong>
                 <div class="items_arrange">
@@ -92,17 +88,20 @@
                 </div>
               </div>
 
-
-            <% end %>
-
           </div>
 
-          <% if current_user.background.past_medical_history.nil? == true %>
-            <%=  link_to "Register", new_past_medical_history_path, class:"btn btn-info" %>
-          <% else %>
             <%= link_to "Edit", edit_past_medical_history_path(@past_medical_history), class:"btn btn-info" %>
             <%= link_to "Delete", past_medical_history_path(@past_medical_history), class:"btn btn-default", method: :delete, data:{confirm:"Are you sure to delete?"}%>
-          <% end %>
+
+        <% else %>
+          <span class="badge badge-info">Your Past Medical History</span>
+            <div class="blockquote ">
+              <h4>Please register your background info first then, you are able to add reviews.</h4>
+            </div>
+          </span>
+            <%=  link_to "Register", new_past_medical_history_path, class:"btn btn-info" %>
+
+        <% end %>
 
         </div>
       </div>

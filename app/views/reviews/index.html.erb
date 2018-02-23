@@ -1,12 +1,10 @@
 <div class="container-head col-sm-12 col-md-12 col-lg-12">
-  <h1><span class="under">Review os system</span></h1>
-  reviews_path
+  <h1><span class="under">Review of system</span></h1>
 </div>
 
 <div class="container-main col-sm-12 col-md-12 col-lg-12">
   <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
     <div class="wrapper-review-form col-md-8 col-md-offset-2">
-
 
     <div class="wrap">
 
@@ -30,22 +28,20 @@
         <div class="check psychiatric_btn btn btn-default">Psychiatric</div>
       </div>
 
+      <div class="translation">
+        <h5>Translation:
+          <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
+          <%= link_to(locale, i18n_url_for(params.merge(locale: locale))) %>
+          <% end %>
+        </h5>
+      </div>
+
     <% if @review.nil? == false %>
 
-    <div class ="controls pull-right">
-      <%= link_to "Edit check list ", edit_review_path(@review), class:"btn btn-info" %>
-      <%= link_to "Delete", review_path(@review), method: :delete, class:"btn btn-default" %>
-    </div>
-
-
-
-    <h1><%= t :General_Fatigue %></h1>
-    <h1><%= t "activerecord.attributes.review.General_Fatigue" %></h1>
-    <h1><%= t "activerecord.attributes.review.General_Weakness" %></h1>
-
-
-
-
+      <div class ="controls pull-right">
+        <%= link_to "Edit check list ", edit_review_path(@review), class:"btn btn-info" %>
+        <%= link_to "Delete", review_path(@review), method: :delete, class:"btn btn-default" %>
+      </div>
 
       <div class="review_of_system">
         <p class="flash"><%= notice %><%= alert %></p>
@@ -57,7 +53,11 @@
               <tr>
                 <td>
                 <div class= "form-group" >
-                  <strong><%= $' %></strong>
+                  <%#  モデルのカラム名を利用してmodel.jp.ymlに登録している日本語を取得する  %>
+                      <%# <%= t "activerecord.attributes.review.General_Weakness" %>
+                      <%# sickness = "General_Weakness" %>
+                      <%#= t "activerecord.attributes.review.#{sickness}" %>
+                  <strong><%= t "activerecord.attributes.review.#{only_true_review_key}" %></strong>
                 </div>
                 </td>
               </tr>
@@ -74,7 +74,7 @@
               <tr>
                 <td>
                 <div class= "form-group" >
-                  <strong><%= $' %></strong>
+                  <strong><%= t "activerecord.attributes.review.#{only_true_review_key}" %></strong>
                 </div>
                 </td>
               </tr>
@@ -90,7 +90,7 @@
               <tr>
                 <td>
                 <div class= "form-group" >
-                  <strong><%= $' %></strong>
+                  <strong><%= t "activerecord.attributes.review.#{only_true_review_key}" %></strong>
                 </div>
                 </td>
               </tr>
@@ -106,7 +106,7 @@
               <tr>
                 <td>
                 <div class= "form-group" >
-                  <strong><%= $' %></strong>
+                  <strong><%= t "activerecord.attributes.review.#{only_true_review_key}" %></strong>
                 </div>
                 </td>
               </tr>
@@ -122,7 +122,7 @@
               <tr>
                 <td>
                 <div class= "form-group" >
-                  <strong><%= $' %></strong>
+                  <strong><%= t "activerecord.attributes.review.#{only_true_review_key}" %></strong>
                 </div>
                 </td>
               </tr>
@@ -138,7 +138,7 @@
               <tr>
                 <td>
                 <div class= "form-group" >
-                  <strong><%= $' %></strong>
+                  <strong><%= t "activerecord.attributes.review.#{only_true_review_key}" %></strong>
                 </div>
                 </td>
               </tr>
@@ -154,7 +154,7 @@
               <tr>
                 <td>
                 <div class= "form-group" >
-                  <strong><%= $' %></strong>
+                  <strong><%= t "activerecord.attributes.review.#{only_true_review_key}" %></strong>
                 </div>
                 </td>
               </tr>
@@ -170,7 +170,7 @@
               <tr>
                 <td>
                 <div class= "form-group" >
-                  <strong><%= $' %></strong>
+                  <strong><%= t "activerecord.attributes.review.#{only_true_review_key}" %></strong>
                 </div>
                 </td>
               </tr>
@@ -186,7 +186,7 @@
               <tr>
                 <td>
                 <div class= "form-group" >
-                  <strong><%= $' %></strong>
+                  <strong><%= t "activerecord.attributes.review.#{only_true_review_key}" %></strong>
                 </div>
                 </td>
               </tr>
@@ -202,7 +202,7 @@
               <tr>
                 <td>
                 <div class= "form-group" >
-                  <strong><%= $' %></strong>
+                  <strong><%= t "activerecord.attributes.review.#{only_true_review_key}" %></strong>
                 </div>
                 </td>
               </tr>
@@ -218,7 +218,7 @@
               <tr>
                 <td>
                 <div class= "form-group" >
-                  <strong><%= $' %></strong>
+                  <strong><%= t "activerecord.attributes.review.#{only_true_review_key}" %></strong>
                 </div>
                 </td>
               </tr>
@@ -234,7 +234,7 @@
               <tr>
                 <td>
                 <div class= "form-group" >
-                  <strong><%= $' %></strong>
+                  <strong><%= t "activerecord.attributes.review.#{only_true_review_key}" %></strong>
                 </div>
                 </td>
               </tr>
@@ -250,7 +250,7 @@
               <tr>
                 <td>
                 <div class= "form-group" >
-                  <strong><%= $' %></strong>
+                  <strong><%= t "activerecord.attributes.review.#{only_true_review_key}" %></strong>
                 </div>
                 </td>
               </tr>
@@ -266,7 +266,7 @@
               <tr>
                 <td>
                 <div class= "form-group" >
-                  <strong><%= $' %></strong>
+                  <strong><%= t "activerecord.attributes.review.#{only_true_review_key}" %></strong>
                 </div>
                 </td>
               </tr>
@@ -282,7 +282,7 @@
               <tr>
                 <td>
                 <div class= "form-group" >
-                  <strong><%= $' %></strong>
+                  <strong><%= t "activerecord.attributes.review.#{only_true_review_key}" %></strong>
                 </div>
                 </td>
               </tr>
@@ -298,7 +298,7 @@
               <tr>
                 <td>
                 <div class= "form-group" >
-                  <strong><%= $' %></strong>
+                  <strong><%= t "activerecord.attributes.review.#{only_true_review_key}" %></strong>
                 </div>
                 </td>
               </tr>
@@ -314,7 +314,7 @@
               <tr>
                 <td>
                 <div class= "form-group" >
-                  <strong><%= $' %></strong>
+                  <strong><%= t "activerecord.attributes.review.#{only_true_review_key}" %></strong>
                 </div>
                 </td>
               </tr>
@@ -330,7 +330,7 @@
               <tr>
                 <td>
                 <div class= "form-group" >
-                  <strong><%= $' %></strong>
+                  <strong><%= t "activerecord.attributes.review.#{only_true_review_key}" %></strong>
                 </div>
                 </td>
               </tr>
@@ -339,21 +339,20 @@
           </table >
         </div>
 
-
-    <% else %>
-
       </div>
 
       <div class ="controls pull-right">
-        <%= link_to "Register", new_review_path(@review), class:"btn btn-info"%>
-        <%= link_to "Back to your review info", reviews_path, class:"btn btn-neutral" %>
+        <%= link_to "Register", new_review_path(@review), class:"btn btn-primary"%>
+      </div>
+
+    <% else %>
+
+      <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
+          <h4>Please register your background info first then, you are able to add reviews.</h4>
       </div>
 
     <% end %>
     </div>
-
-
-
     </div>
   </div>
 

@@ -5,6 +5,22 @@ class ApplicationController < ActionController::Base
 
   # before_actionで下で定義したメソッドを実行
     before_action :configure_permitted_parameters, if: :devise_controller?
+    before_filter :set_locale
+
+    def set_locale
+    I18n.locale = locale
+  end
+
+  def locale
+    @locale ||= params[:locale] || I18n.default_locale
+  end
+
+  def default_url_options(options={})
+    options.merge(locale: locale)
+  end
+
+
+
 
     #変数PERMISSIBLE_ATTRIBUTESに配列[:name]を代入
     PERMISSIBLE_ATTRIBUTES = %i(name)

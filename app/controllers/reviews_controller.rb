@@ -9,6 +9,8 @@ class ReviewsController < ApplicationController
       if review.background_id == current_user.background.id
         @review = Review.find_by(background_id: review.background_id)
         @only_true_review = @review.attributes.select{|k, v| v ==  true} # @reviewからattributesで属性をハッシュ形式で取得後にtrueの値のみをインスタンス変数に代入
+      elsif review.background_id == nil?
+        @review = nil
       end
     end
     set_target_columns
@@ -44,8 +46,6 @@ class ReviewsController < ApplicationController
     @review.destroy
     redirect_to reviews_path
   end
-
-
 
   private
 
