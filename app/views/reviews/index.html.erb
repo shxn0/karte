@@ -345,12 +345,17 @@
         <%= link_to "Register", new_review_path(@review), class:"btn btn-primary"%>
       </div>
 
-    <% else %>
-
+    <% elsif @review.nil? == true && current_user.background.nil? == false %>
       <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
           <h4>Please register your background info first then, you are able to add reviews.</h4>
       </div>
-
+        <div class ="controls pull-right">
+          <%= link_to "Register", new_review_path(@review), class:"btn btn-primary"%>
+        </div>
+    <% else %>
+      <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
+          <h4>Please register your background info first then, you are able to add reviews.</h4>
+      </div>
     <% end %>
     </div>
     </div>
