@@ -1,5 +1,20 @@
 <div class="wrapper_with_footer "> <!-- footerを含むwrapper_with_footerクラスを作成 -->
   <div class="wrapper"> <!-- footerを含まないwrapperクラスを作成 -->
+    <% if notice.nil? == false %>
+      <div class="alert alert-success col-md-6 col-md-offset-3" role="alert">
+        <div class="container">
+          <div class="alert-icon">
+            <i class="now-ui-icons ui-2_like"></i>
+          </div>
+          <strong>Well done!</strong> <%= notice %><%= alert %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">
+              <i class="now-ui-icons ui-1_simple-remove"></i>
+            </span>
+          </button>
+        </div>
+      </div>
+    <% end %>
 
     <section class="main-header">
       <h1>Make your medical communications <br /> more efficient</h1>
@@ -52,21 +67,6 @@
     <div class="container-main-last col-sm-12 col-md-12 col-lg-12">
       <div class="container-main-content col-sm-12 col-md-12 col-lg-12">
 
-      <% if notice.nil? == false %>
-        <div class="alert alert-success col-md-6 col-md-offset-3" role="alert">
-        	<div class="container">
-        		<div class="alert-icon">
-        			<i class="now-ui-icons ui-2_like"></i>
-        		</div>
-        		<strong>Well done!</strong> <%= notice %><%= alert %>
-        		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        			<span aria-hidden="true">
-        				<i class="now-ui-icons ui-1_simple-remove"></i>
-        			</span>
-        		</button>
-        	</div>
-        </div>
-      <% end %>
         <%#= link_to "backgrounds_index", backgrounds_path %>
       </div>
     </div>
